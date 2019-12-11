@@ -24,8 +24,12 @@ def main():
 
 	GPIO.setmode(GPIO.BCM)
 
-
+	GPIO.setup(ALIM5V_WATERPUMP, GPIO.OUT)
+	GPIO.output(ALIM5V_WATERPUMP, GPIO.HIGH)
 	switch_on(SWITCH_WATERPUMP, 1, 1)
+	GPIO.output(ALIM5V_WATERPUMP, GPIO.LOW)
+
+
 	switch_on(SWITCH_OXYGENTANK, 1, 1)
 
 
