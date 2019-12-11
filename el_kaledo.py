@@ -30,9 +30,9 @@ def main():
 	GPIO.setmode(GPIO.BCM)
 
 
-	schedule.every().day.at("04:47").do(start_thread, switch, SWITCH_WATERPUMP, 80)
-	schedule.every().day.at("04:48").do(start_thread, switch, SWITCH_WATERPUMP, 3)
+	schedule.every().day.at("04:48").do(start_thread, switch, SWITCH_WATERPUMP, 80)
+	schedule.every().day.at("04:49").do(start_thread, switch, SWITCH_WATERPUMP, 3)
 
 	while True:
 		schedule.run_pending()
-    	time.sleep(5)
+		time.sleep(5)
