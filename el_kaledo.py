@@ -1,8 +1,9 @@
+from multiprocessing import process
 import RPi.GPIO as GPIO
 import time
 
 
-def switch_on(pin, t):
+def switch(pin, t):
 	GPIO.setup(pin, GPIO.OUT)
 
 	GPIO.output(pin, GPIO.HIGH)
@@ -19,13 +20,12 @@ def main():
 	ALIM5V_OXYGENTANK = 2
 	GROUND_OXYGENTANK = 14
 
+	switch_thread = process(target=switch)
 
 	GPIO.setmode(GPIO.BCM)
 
-	switch_on(SWITCH_WATERPUMP, 1)
-
-
-	switch_on(SWITCH_OXYGENTANK, 1)
+	switch_thread.start(SWITCH_WATERPUMP, 1)
+	switch_thread.start(SWITCH_OXYGENTANK, 1)
 
 
 
