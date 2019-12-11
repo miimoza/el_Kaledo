@@ -8,9 +8,8 @@ def switch_on(pin, t, gpio_out):
 	else:
 		GPIO.setup(pin, GPIO.IN)
 
-	GPIO.output(pin, GPIO.LOW)
-	time.sleep(t)
 	GPIO.output(pin, GPIO.HIGH)
+	time.sleep(t)
 
 def main():
 	SWITCH_WATERPUMP = 21
