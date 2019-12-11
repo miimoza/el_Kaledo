@@ -1,4 +1,4 @@
-from multiprocessing import process
+from multiprocessing import Process
 import RPi.GPIO as GPIO
 import time
 
@@ -25,10 +25,10 @@ def main():
 
 	GPIO.setmode(GPIO.BCM)
 
-	switch_thread = process(target=switch, args=(SWITCH_WATERPUMP, 1))
+	switch_thread = Process(target=switch, args=(SWITCH_WATERPUMP, 1))
 	switch_thread.start()
 
-	switch_thread = process(target=switch, args=(SWITCH_OXYGENTANK, 1))
+	switch_thread = Process(target=switch, args=(SWITCH_OXYGENTANK, 1))
 	switch_thread.start()
 
 
