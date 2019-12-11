@@ -20,12 +20,16 @@ def main():
 	ALIM5V_OXYGENTANK = 2
 	GROUND_OXYGENTANK = 14
 
-	switch_thread = process(target=switch)
+
+
 
 	GPIO.setmode(GPIO.BCM)
 
-	switch_thread.start(SWITCH_WATERPUMP, 1)
-	switch_thread.start(SWITCH_OXYGENTANK, 1)
+	switch_thread = process(target=switch, args=(SWITCH_WATERPUMP, 1))
+	switch_thread.start()
+
+	switch_thread = process(target=switch, args=(SWITCH_OXYGENTANK, 1))
+	switch_thread.start()
 
 
 
