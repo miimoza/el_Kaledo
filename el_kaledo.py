@@ -2,7 +2,12 @@ import RPi.GPIO as GPIO
 import time
 
 
-def switch_on(pin, t):
+def switch_on(pin, t, gpio_out):
+	if gpio_out:
+		GPIO.setup(SWITCH_WATERPUMP, GPIO.OUT)
+	else:
+		GPIO.setup(SWITCH_WATERPUMP, GPIO.IN)
+
 	GPIO.output(pin, GPIO.HIGH)
 	time.sleep(t)
 	GPIO.output(pin, GPIO.LOW)
@@ -17,12 +22,10 @@ def main():
 	GROUND_OXYGENTANK = 14
 
 
-
 	GPIO.setmode(GPIO.BCM)
 
-	GPIO.setup(SWITCH_WATERPUMP, GPIO.OUT)
 
-	switch_on(SWITCH_WATERPUMP, 1)
+	switch_on(SWITCH_WATERPUMP, 1, 1)
 
 
 
