@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 import time
 
 
-def switch_on(pin, time):
+def switch_on(pin, t):
 	GPIO.output(pin, GPIO.HIGH)
-	time.sleep(time)
+	time.sleep(t)
 	GPIO.output(pin, GPIO.LOW)
 
 def main():
