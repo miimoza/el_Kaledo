@@ -27,6 +27,8 @@ def main():
 
 	switch_on(SWITCH_WATERPUMP, 1, 1)
 
+	switch_on(SWITCH_OXYGENTANK, 2, 1)
+
 
 
 	GPIO.cleanup()
