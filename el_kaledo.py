@@ -11,7 +11,7 @@ def switch(pin, t):
 
 	GPIO.setup(pin, GPIO.IN)
 
-def start_thread(function, pin, time)
+def start_thread(function, pin, time):
 	switch_thread = Process(target=switch, args=(pin, time))
 	switch_thread.start()
 
