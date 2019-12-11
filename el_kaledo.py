@@ -13,7 +13,7 @@ def switch_on(pin, t, gpio_out):
 	GPIO.output(pin, GPIO.HIGH)
 
 def main():
-	SWITCH_WATERPUMP = 1
+	SWITCH_WATERPUMP = 21
 	ALIM5V_WATERPUMP = 4
 	GROUND_WATERPUMP = 6
 
