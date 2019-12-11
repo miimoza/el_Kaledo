@@ -25,10 +25,11 @@ def main():
 	GPIO.setmode(GPIO.BCM)
 
 
-	switch_on(SWITCH_WATERPUMP, 1, 1)
+	switch_on(SWITCH_WATERPUMP, 0.2, 1)
 
-	switch_on(SWITCH_OXYGENTANK, 2, 1)
+	switch_on(SWITCH_OXYGENTANK, 0.4, 1)
 
+	switch_on(SWITCH_WATERPUMP, 0.1, 1)
 
 
 	GPIO.cleanup()
