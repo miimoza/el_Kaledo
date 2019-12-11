@@ -11,6 +11,10 @@ def switch(pin, t):
 
 	GPIO.setup(pin, GPIO.IN)
 
+def start_thread(function, pin, time)
+	switch_thread = Process(target=switch, args=(pin, time))
+	switch_thread.start()
+
 def main():
 	SWITCH_WATERPUMP = 21
 	ALIM5V_WATERPUMP = 4
@@ -25,11 +29,8 @@ def main():
 
 	GPIO.setmode(GPIO.BCM)
 
-	switch_thread = Process(target=switch, args=(SWITCH_WATERPUMP, 1))
-	switch_thread.start()
-
-	switch_thread = Process(target=switch, args=(SWITCH_OXYGENTANK, 1))
-	switch_thread.start()
+	start_thread(switch, SWITCH_WATERPUMP, 1)
+	start_thread(switch, SWITCH_OXYGENTANK, 1)
 
 
 
