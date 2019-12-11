@@ -4,9 +4,9 @@ import time
 
 def switch_on(pin, t, gpio_out):
 	if gpio_out:
-		GPIO.setup(SWITCH_WATERPUMP, GPIO.OUT)
+		GPIO.setup(pin, GPIO.OUT)
 	else:
-		GPIO.setup(SWITCH_WATERPUMP, GPIO.IN)
+		GPIO.setup(pin, GPIO.IN)
 
 	GPIO.output(pin, GPIO.HIGH)
 	time.sleep(t)
