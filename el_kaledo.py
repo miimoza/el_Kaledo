@@ -35,5 +35,5 @@ def main():
 	schedule.every().day.at("04:05").do(start_thread, switch, SWITCH_WATERPUMP, 3)
 
 	while True:
-    	schedule.run_pending()
-    	time.sleep(5) # wait one minute
+		schedule.run_pending()
+		time.sleep(5) # wait one minute
