@@ -1,6 +1,7 @@
 from multiprocessing import Process
 import RPi.GPIO as GPIO
 import time
+import schedule
 
 
 def switch(pin, t):
@@ -29,7 +30,10 @@ def main():
 
 	GPIO.setmode(GPIO.BCM)
 
-	start_thread(switch, SWITCH_WATERPUMP, 3)
-	time.sleep(2)
-	start_thread(switch, SWITCH_OXYGENTANK, 5)
-	time.sleep(8)
+
+	schedule.every().day.at("04:04").do(start_thread, switch, SWITCH_WATERPUMP, 3)
+	schedule.every().day.at("04:05").do(start_thread, switch, SWITCH_WATERPUMP, 3)
+
+	while True:
+    	schedule.run_pending()
+    	time.sleep(5) # wait one minute
