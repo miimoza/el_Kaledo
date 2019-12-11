@@ -2,7 +2,10 @@ import RPi.GPIO as GPIO
 import time
 
 
-
+def switch_on(pin, time):
+	GPIO.output(pin, GPIO.HIGH)
+	time.sleep(time)
+	GPIO.output(pin, GPIO.LOW)
 
 def main():
 	SWITCH_WATERPUMP = 21
@@ -18,10 +21,8 @@ def main():
 	GPIO.setmode(GPIO.BCM)
 
 	GPIO.setup(SWITCH_WATERPUMP, GPIO.OUT)
-	
-	GPIO.output(SWITCH_WATERPUMP, GPIO.HIGH)
-	time.sleep(1)
-	GPIO.output(SWITCH_WATERPUMP, GPIO.LOW)
+
+	switch_on(SWITCH_WATERPUMP, 1)
 
 
 
