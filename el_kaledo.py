@@ -30,6 +30,8 @@ def main():
 	switch_on(SWITCH_OXYGENTANK, 0.4, 1)
 
 	switch_on(SWITCH_WATERPUMP, 0.1, 1)
+	switch_on(SWITCH_WATERPUMP, 0.1, 1)
+	switch_on(SWITCH_WATERPUMP, 0.1, 1)
 
 
 	GPIO.cleanup()
