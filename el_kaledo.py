@@ -1,0 +1,19 @@
+import RPi.GPIO as GPIO
+import time
+
+
+def main():
+	SWICTH_WATERPUMP = 21
+	ALIM5V_WATERPUMP = 4
+	GROUND_WATERPUMP = 6
+
+	GPIO.setmode(GPIO.BOARD)
+	GPIO.setup(SWICTH_WATERPUMP, GPIO.OUT)
+
+	GPIO.output(SWITCH_WATERPUMP, GPIO.HIGH)
+	time.sleep(1)
+	GPIO.output(SWITCH_WATERPUMP, GPIO.LOW)
+
+
+
+	GPIO.cleanup()
