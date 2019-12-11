@@ -29,8 +29,9 @@ def main():
 
 	GPIO.setmode(GPIO.BCM)
 
-	start_thread(switch, SWITCH_WATERPUMP, 1)
-	start_thread(switch, SWITCH_OXYGENTANK, 1)
+	start_thread(switch, SWITCH_WATERPUMP, 3)
+	time.sleep(2)
+	start_thread(switch, SWITCH_OXYGENTANK, 5)
 
 
 
