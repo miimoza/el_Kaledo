@@ -32,8 +32,4 @@ def main():
 	start_thread(switch, SWITCH_WATERPUMP, 3)
 	time.sleep(2)
 	start_thread(switch, SWITCH_OXYGENTANK, 5)
-
-
-
-
-	time.sleep(2)
+	time.sleep(8)
