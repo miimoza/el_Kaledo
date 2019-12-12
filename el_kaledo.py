@@ -34,10 +34,10 @@ def set_schedule():
     GPIO.setmode(GPIO.BCM)
 
     schedule_list = [
-        ["14:00", SWICTH_OXYGEN, 600, "OXYGEN"],
-        ["16:00", SWITCH_OXYGEN, 600, "OXYGEN"],
-        ["18:00", SWITCH_OXYGEN, 600, "OXYGEN"],
-        ["20:00", SWITCH_OXYGEN, 600, "OXYGEN"]
+        ["14:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
+        ["16:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
+        ["18:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
+        ["20:00", SWITCH_OXYGENTANK, 600, "OXYGEN"]
     ]
 
     return schedule_list
@@ -49,8 +49,14 @@ def dump_GUI(schedule_list):
 
     print ("===========================================================================(  )=")
 
-    print()
-    print("     HOUR     |   GPIO N°   |  TIME (SEC) |    LABEL    ")
-    for sched in schedule:
-        print(sched[0].ljust(14) + sched[1].ljust(14) + sched[2].ljust(14) + sched[3].ljust(14))
-        print(sched[1].ljust(15))
+        
+
+    print("HOUR".center(7) + "|" + "GPIO N°".center(9) + "|" + "TIME (SEC)".center(12) + "|" + "LABEL".center(49))
+    
+    print("--------------------------------------------------------------------------------")
+    for sched in schedule_list:
+        print(sched[0].center(7) +"|"+ str(sched[1]).center(9) +"|"+ str(sched[2]).center(12) +"|"+ sched[3].center(49))
+     
+        
+      
+    print ("================================================================================")
