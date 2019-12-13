@@ -3,14 +3,14 @@ import RPi.GPIO as GPIO
 import schedule
 from datetime import datetime
 import os
+import threading
 
 def switch(pin, t):
     GPIO.setup(pin, GPIO.OUT)
 
     GPIO.output(pin, GPIO.HIGH)
-    time.sleep(t)
 
-    GPIO.setup(pin, GPIO.IN)
+    threading.Timer(t, GPIO.setup, [pin, GPIO.IN]).start()
 
 def start_thread(function, pin, time):
     switch_thread = Process(target=switch, args=(pin, time))
