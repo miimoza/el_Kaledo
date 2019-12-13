@@ -37,7 +37,8 @@ def set_schedule():
         ["14:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
         ["16:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
         ["18:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
-        ["20:00", SWITCH_OXYGENTANK, 600, "OXYGEN"]
+        ["20:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
+		["01:12", SWITCH_OXYGENTANK, 6, "OXYGEN"]
     ]
 
     return schedule_list
