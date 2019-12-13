@@ -14,3 +14,5 @@ def main():
         el_kaledo.dump_GUI(schedule_list)
         schedule.run_pending()
         threading.Timer(30, main).start()
+
+main()
