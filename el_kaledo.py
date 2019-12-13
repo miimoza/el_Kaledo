@@ -50,5 +50,5 @@ def dump_GUI(schedule_list):
     print("TIME".center(7) + "|" + "GPIO N°".center(9) + "|" + "DURATION (SEC)".center(16) + "|" + "LABEL".center(45))
     print("--------------------------------------------------------------------------------")
     for sched in schedule_list:
-        print(sched[0].center(7) +"|"+ str(sched[1]).center(9) +"|"+ str(sched[2]).center(12) +"|"+ sched[3].center(49))
+        print(sched[0].center(7) +"|"+ str(sched[1]).center(9) +"|"+ str(sched[2]).center(16) +"|"+ sched[3].center(45))
     print ("================================================================================")
