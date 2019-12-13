@@ -45,11 +45,11 @@ def set_schedule():
 
 def dump_GUI(schedule_list):
     os.system("clear")
-    print ("=========================[ " + str(datetime.now()) + " ]=========================")
+    print("="*30 + "[" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")).center(20) + "]" + "="*29)
     print ("EL K-RE D0 v0.1.2".center(78))
-    print ("===========================================================================(  )=")
+    print ("="*75 + "(  )=")
     print("TIME".center(7) + "|" + "GPIO N°".center(9) + "|" + "DURATION (SEC)".center(16) + "|" + "LABEL".center(45))
     print("--------------------------------------------------------------------------------")
     for sched in schedule_list:
         print(sched[0].center(7) +"|"+ str(sched[1]).center(9) +"|"+ str(sched[2]).center(16) +"|"+ sched[3].center(45))
-    print ("================================================================================")
+    print ("="*80)
