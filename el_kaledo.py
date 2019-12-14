@@ -42,7 +42,9 @@ def set_schedule():
 		["19:00", SWITCH_WATERPUMP, 60, "WATER PUMP"],
         ["20:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
 		["21:00", SWITCH_WATERPUMP, 60, "WATER PUMP"],
-		["22:00", SWITCH_OXYGENTANK, 600, "OXYGEN"]
+		["22:00", SWITCH_OXYGENTANK, 600, "OXYGEN"],
+        ["21:18", SWITCH_WATERPUMP, 600, "OXYGEN"],
+        ["21:18", SWITCH_OXYGENTANK, 600, "OXYGEN"],
     ]
 
     return schedule_list
